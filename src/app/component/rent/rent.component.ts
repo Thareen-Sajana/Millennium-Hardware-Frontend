@@ -17,6 +17,42 @@ export class RentComponent {
 
     public url:string = "http://localhost:8080/rent";
 
+    public rent:Rent = {
+      rentId:"",
+        rentalDate: "",
+        returnDate: "",
+        dueDate: "",
+        totalCost:""
+    }
+
+    public getRent(){
+      this.service.search(this.rent.rentId,this.url).subscribe((data:Rent) => {
+        this.rent.rentId = data.rentId;
+        this.rent.rentalDate = data.rentalDate;
+        this.rent.returnDate = data.returnDate;
+        this.rent.dueDate = data.dueDate;
+        this.rent.totalCost = data.totalCost;
+
+      })
+    }
+
+    public addRental(){
+      this.service.add(this.rent,this.url).subscribe((data:JSON) => {
+        alert("Done");
+      })
+    }
+
+    public updateRental(){
+      this.service.update(this.rent.rentId,this.rent,this.url).subscribe((data:JSON) => {
+        alert("Update Successful");
+      })
+    }
+
+    public deleteCustomer(){
+      this.service.delete(this.rent.rentId,this.url).subscribe((data:JSON) => {
+        alert("Delete Successful");
+      })
+    }
 
 }
 
