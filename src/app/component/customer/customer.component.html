@@ -1,1 +1,28 @@
-<p>customer works!</p>
+
+
+<div class="mb-3">
+    <label for="customerId" class="form-label">Customer ID</label>
+    <input type="text" id="customerId" class="form-control" [(ngModel)]="customer.cusId">
+</div>
+
+<div class="mb-3">
+    <label for="customerName" class="form-label">Customer Name</label>
+    <input type="text" id="customerName" class="form-control" [(ngModel)]="customer.name">
+</div>
+
+<div class="mb-3">
+    <label for="city" class="form-label">City</label>
+    <input type="text" id="city" class="form-control" [(ngModel)]="customer.city">
+</div>
+
+<div class="mb-3">
+    <label for="Contact" class="form-label">Contact</label>
+    <input type="text" id="Contact" class="form-control" [(ngModel)]="customer.contact">
+</div>
+
+<div>
+    <button type="button" class="btn btn-primary m-2" (click)="addCustomer()">Add</button>
+    <button type="button" class="btn btn-success m-2" (click)="updateCustomer()">Update</button>
+    <button type="button" class="btn btn-danger m-2" (click)="deleteCustomer()">Delete</button>
+    <button type="button" class="btn btn-secondary m-2" (click)="searchCustomer()">Search</button>
+</div>
