@@ -1,6 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AppService } from '../../service/app.service';
 
 @Component({
   selector: 'app-rent',
@@ -12,4 +13,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class RentComponent {
 
+    constructor(private service:AppService){}
+
+    public url:string = "http://localhost:8080/rent";
+
+
+}
+
+interface Rent{
+  rentId:string,
+    rentalDate: string,
+    returnDate: string,
+    dueDate: string,
+    totalCost:string
 }
